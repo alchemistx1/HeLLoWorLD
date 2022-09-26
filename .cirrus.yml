@@ -19,13 +19,13 @@ task:
       image: nexgang/ubuntu:latest
       cpu: 8
       memory: 32G
-    #down_background_script:
-      #- git clone https://$CIRRUS_REPO_OWNER:$github_token@github.com/$CIRRUS_REPO_OWNER/scripts.git -b master /tmp/cs
-      #- mv /tmp/cs/* /tmp/ci
-      #- bash down*
+    down_background_script:
+      - git clone https://$CIRRUS_REPO_OWNER:$github_token@github.com/$CIRRUS_REPO_OWNER/scripts.git -b master /tmp/cs
+      - mv /tmp/cs/* /tmp/ci
+      - bash down*
     symc_script:
       - bash sy*
     compile_script:
-      - bash build.sh
-    #upl_script:
-      #- bash upl*
+      - bash bu*
+    upl_script:
+      - bash upl*
