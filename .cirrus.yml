@@ -26,6 +26,6 @@ task:
     symc_script:
       - bash sy*
     compile_script:
-      - bash buld.sh
+      - bash build.sh
     #upl_script:
       #- bash upl*
