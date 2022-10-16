@@ -24,7 +24,7 @@ repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync 
 git clone --depth=1 https://$SOURCE_REPO:$SOURCE_TOKEN@github.com/$SOURCE_REPO/device -b topaz-test device/xiaomi/raphael
 git clone --depth=1 https://$SOURCE_REPO:$SOURCE_TOKEN@github.com/$SOURCE_REPO/vendor -b topaz vendor/xiaomi/raphael
 git clone --depth=1 https://github.com/back-up-git/kernel_xiaomi_raphael.git -b msmnile kernel/msm-4.14
-# git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/device_xiaomi_raphael-kernel -b topaz device/xiaomi/raphael-kernel
+## git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/device_xiaomi_raphael-kernel -b topaz device/xiaomi/raphael-kernel
 
 . /tmp/ci/function
 tg "$rom_name source sync completed!
