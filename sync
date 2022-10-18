@@ -14,16 +14,16 @@ bash ~/git_cookies.sh
 fi
 
 # Sync source
-repo init --depth=1 --no-repo-verify -u https://github.com/AOSPA/manifest -b topaz -g default,-mips,-darwin,-notdefault
+repo init --depth=1 --no-repo-verify -u https://github.com/LineageOS/android.git -b lineage-19.1 -g default,-mips,-darwin,-notdefault
 git clone https://github.com/$SOURCE_REPO/local_manifests.git --depth 1 -b lineage .repo/local_manifests
 
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
 # local manifest
-git clone --depth=1 https://$SOURCE_REPO:$SOURCE_TOKEN@github.com/$SOURCE_REPO/device -b topaz device/xiaomi/raphael
-git clone --depth=1 https://$SOURCE_REPO:$SOURCE_TOKEN@github.com/$SOURCE_REPO/vendor -b topaz vendor/xiaomi/raphael
-git clone --depth=1 https://github.com/back-up-git/kernel_xiaomi_raphael.git -b topaz-wip kernel/msm-4.14
+# git clone --depth=1 https://$SOURCE_REPO:$SOURCE_TOKEN@github.com/$SOURCE_REPO/device -b topaz device/xiaomi/raphael
+# git clone --depth=1 https://$SOURCE_REPO:$SOURCE_TOKEN@github.com/$SOURCE_REPO/vendor -b topaz vendor/xiaomi/raphael
+# git clone --depth=1 https://github.com/back-up-git/kernel_xiaomi_raphael.git -b topaz-wip kernel/msm-4.14
 # git clone --depth=1 https://$DEVICE_REPO:$DEVICE_TOKEN@github.com/$DEVICE_REPO/device_xiaomi_raphael-kernel -b staging device/xiaomi/raphael-kernel
 
 . /tmp/ci/function
