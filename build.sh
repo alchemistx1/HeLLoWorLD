@@ -1,4 +1,4 @@
-# Normal build steps [6]
+# Normal build steps [4]
 lunch p404_raphael-userdebug
 
 # export variable here
