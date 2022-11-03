@@ -20,7 +20,7 @@ git clone https://github.com/$MAIN_REPO/local_manifests.git --depth 1 -b tokui .
 # Sync source without unnecessary messages, try with -j30 first, if fails, it will try again
 repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all) || repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --all)
 
-# local manifest
+# local manifests
 git clone --depth=1 https://$CODER_REPO:$CODER_TOKEN@github.com/$CODER_REPO/device -b tokui device/xiaomi/raphael
 git clone --depth=1 https://$CODER_REPO:$CODER_TOKEN@github.com/$CODER_REPO/vendor -b topaz-wip vendor/xiaomi/raphael
 git clone --depth=1 https://github.com/$MAIN_REPO/kernel_xiaomi_raphael.git -b topaz kernel/msm-4.14
